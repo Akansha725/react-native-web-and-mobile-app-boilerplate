@@ -9,7 +9,8 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Dimensions
 } from 'react-native';
 
 const instructions = Platform.select({
@@ -21,18 +22,28 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+
+  componentWillMount(){
+    height = Dimensions.get('window').height;
+    width = Dimensions.get('window').width;
+
+    console.log(height+ " "+width);
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+      <View
+        style={{
+          flexDirection: 'row',
+          height: height,
+          width: width,
+          padding: 20,
+          borderColor: 'red',
+          borderWidth: 2
+        }}>
+        <View style={{backgroundColor: 'blue', flex: 1}} />
+        <View style={{backgroundColor: 'red', flex: 1}} />
+        <Text>Hello World!</Text>
       </View>
     );
   }

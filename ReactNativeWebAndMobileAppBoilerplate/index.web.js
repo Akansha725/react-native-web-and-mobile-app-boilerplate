@@ -1,47 +1,40 @@
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { AppRegistry, StyleSheet, Text, View} from 'react-native';
+
+import _ from 'lodash';
+
+import CommonView from './src/common/commonView';
+import RootNavigator from './src/rootNavigator';
 
 class ReactNativeWebAndMobileAppBoilerplate extends Component {
+
+  constructor(props, context) {
+        super(props, context);
+
+        this.state = {
+        };
+
+    }
+
+
+  componentWillMount(){
+  }
+
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native for web!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.web.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload
-        </Text>
-      </View>
+      <RootNavigator />
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
-
 AppRegistry.registerComponent('ReactNativeWebAndMobileAppBoilerplate', () => ReactNativeWebAndMobileAppBoilerplate);
 AppRegistry.runApplication('ReactNativeWebAndMobileAppBoilerplate', { rootTag: document.getElementById('react-app') });
+
+
+
+// <CommonView>
+// <View style={{backgroundColor: 'blue', flex: 1}} />
+// <View style={{backgroundColor: 'red', flex: 1}} />
+//   <Text>Hello World!</Text>
+// </CommonView>

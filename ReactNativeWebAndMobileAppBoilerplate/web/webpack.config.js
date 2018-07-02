@@ -36,7 +36,8 @@ module.exports = {
                     path.resolve(__dirname, '../node_modules/react-native-button'),
                     path.resolve(__dirname, '../node_modules/react-native-animatable'),
                     path.resolve(__dirname, '../node_modules/tricky-components'),
-                    path.resolve(__dirname, '../node_modules/react-native-web-webview')
+                    path.resolve(__dirname, '../node_modules/react-native-web-webview'),
+                    path.resolve(__dirname, '../node_modules/react-navigation')
                 ],
                 loader: 'babel-loader?+cacheDirectory'
             },
