@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, View} from 'react-native';
 
 import _ from 'lodash';
+import createHistory from "history/createBrowserHistory";
 
 import CommonView from './src/common/commonView';
 import RootNavigator from './src/rootNavigator';
+
+const history = createHistory();
 
 class ReactNativeWebAndMobileAppBoilerplate extends Component {
 

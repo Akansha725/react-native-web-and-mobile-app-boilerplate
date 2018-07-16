@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import HomeScreen from './screens/homeScreen';
+import Drawer from './Drawer';
 
 const RootNavigator = () => (
   <Router>
@@ -22,7 +23,7 @@ const RootNavigator = () => (
       <hr />
 
       <Route exact path="/" component={HomeScreen} />
-      <Route path="/about" component={HomeScreen} />
+      <Route path="/about" component={Drawer} />
       <Route path="/topics" component={HomeScreen} />
     </div>
   </Router>
