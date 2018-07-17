@@ -11,19 +11,30 @@ import { Redirect } from "react-router-dom";
 
 
 export default class WebDrawer extends Component {
-  state = {
-    active: false
-  };
+
+  constructor(props, context) {
+        super(props, context);
+
+        this.state = {
+          active: false,
+          title: "Home"
+        };
+    }
 
   handleToggle = () => {
     this.setState({active: !this.state.active});
   };
 
+  componentDidMount(){
+    this.setState({
+      title: this.props.location.pathname
+    });
+  }
   render () {
     return (
       <View>
         <AppBar
-          title='React Toolbox'
+          title={this.state.title}
           leftIcon={<FontAwesome.FaBars />}
           onLeftIconClick={this.handleToggle} />
         <Drawer active={this.state.active} onOverlayClick={this.handleToggle}>
